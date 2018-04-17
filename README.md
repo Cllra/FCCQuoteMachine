@@ -1,6 +1,6 @@
 # FCCQuoteMachine
 
-todo:
+## todo:
 -Styling
 -Logo
 -Twitter
