@@ -1,30 +1,28 @@
-$(document).ready(function() {
-
-var jqxhr = $.getJSON( "https://random-quote-generator.herokuapp.com/api/quotes/", function() {
-    console.log( "success" );
+function rndQuote() {
+  $.ajax({
+    headers:{
+      Accept: "application/json"
+    },
+    url: "https://random-quote-generator.herokuapp.com/api/quotes/",
+    success: function(r){
+      console.log(r);
+      var rndQuoteObj = r[Math.floor(Math.random()*r.length)];
+      console.log(rndQuoteObj);
+      $("#text").text(rndQuoteObj.quote);
+      $("#author").text(rndQuoteObj.author);
+      
+    },
+    error: function(a, b, c){
+      console.log(b);
+      console.log(c);
+    }
     
-   
   })
-    .done(function(jqxhr) {
-        console.log(jqxhr);
-        var qKeys = Object.keys(jqxhr);
-        var rKeys = qKeys[Math.floor(Math.random()*qKeys.length)]
-        console.log(rKeys);
-        var rQuote = jqxhr[rKeys];
-        console.log(rQuote);
-        document.getElementById("quote").innerHTML = rQuote.quote;
-        console.log( "second success" );
-    })
-    .fail(function() {
-      console.log( "error" );
-    })
-    .always(function() {
-      console.log( "complete" );
-    });
-   
+}
 
-});
-
+$(document).ready(function() {
+  rndQuote();
+  $('#new-quote').on('click', rndQuote);})
 /**
  * https://quotes.rest/#!/quote/get_quote_random
  * https://theysaidso.com/api/
