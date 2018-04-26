@@ -2,6 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../styles/main.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="../data/api.js" ></script>
 
@@ -10,23 +11,32 @@
 
 <body>
     <div class="grid-container">
-        <div class="grid-item" id="gridheader">
-                <h1>Get your Daily Wisdom</h1>
-        </div>        
-        <div class="grid-item" id="gridbutton">
-            <button id="new-quote">Gimme me a new Wisdom of the Day</button>
-        </div>
+ 
+
         <div class="grid-item" id="gridtext">
             <p id="text"></p>
         </div>
-        <div class="grid-item" id="author">
+        <div class="grid-item" id="gridauthor">
+            <p id="author"></p>
         </div>
-        
+        <div class="grid-item" id="gridbutton">
+            <button class="newbutton"id="new-quote">Need more Brain-Poowwwaaaa!</button>
+        </div>
         <div class="grid-item" id="gridtweet">
-            <a class="tweet" data-show-count="false" target="_blank">tweet</a>
+                <a class="twitter-share-button" target="_blank">
+                    <img id="tw-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOs2c0aStl-Gxf3AoFQWFGno0NlI0Xw8-MWJktPslbfLnMBxNzAw">
+                </a>
         </div>
         <div class="grid-item" id="gridme">
-            <p>Created by SF put my Logo and redirect to homepage somewhere</p>
+            <!-- Place this tag where you want the button to render. -->
+            <a class="github-button" href="https://github.com/Cllra" aria-label="Follow @Cllra on GitHub" target="_blank">Follow @Cllra</a>
         </div>
+        <div id="gridpicture">
+            <img id="wis-pic" src="http://straitsup.com/wp-content/uploads/2017/08/what-is-wisdom.jpg"> 
+        </div>
+    </div>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>

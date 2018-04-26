@@ -1,7 +1,9 @@
 # FCCQuoteMachine
 
 ## todo:
--Styling
--Logo
--Twitter
--Interaction with button
+- Grid Fix
+- "Theme"
+- Twitter Button
+- Font
+- Background-Color
+

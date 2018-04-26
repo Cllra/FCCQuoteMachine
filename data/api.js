@@ -3,14 +3,16 @@ function rndQuote() {
     headers:{
       Accept: "application/json"
     },
-    url: "https://random-quote-generator.herokuapp.com/api/quotes/",
+    url: "https://talaikis.com/api/quotes/",
+    //"https://random-quote-generator.herokuapp.com/api/quotes/",
     success: function(r){
+      
       var rndQuoteObj = r[Math.floor(Math.random()*r.length)];
       //Can Jquery do cool animation or sth?
       
-      $("#text").text(rndQuoteObj.quote);
+      $("#text").text('"'+ rndQuoteObj.quote +'"');
       $("#author").text(rndQuoteObj.author);
-      $(".tweet").attr("href", "https://twitter.com/intent/tweet?hashtags=DailyWisdom&text=My%20daily%20wisdom:" + rndQuoteObj.quote + "%20" + rndQuoteObj.author);
+      $(".twitter-share-button").attr("href", "https://twitter.com/intent/tweet?hashtags=DailyWisdom&text=My%20daily%20wisdom: " + rndQuoteObj.quote + "%20" + rndQuoteObj.author);
       
       //https://dev.twitter.com/web/tweet-button/parameters
      
